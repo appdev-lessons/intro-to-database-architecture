@@ -155,26 +155,22 @@ Remember:
 "Movie" seems like an important noun in this app's problem domain. Let's make a table to keep track of movies. To guide us in identifying the attributes that are being stored, let's look at [a movie's details page](https://msm-associations.matchthetarget.com/movies/24).
 
 ![](assets/movies-table-1.png)
-{: .bleed-full }
 
 We add columns for all of the attributes of a movie (title, duration, description, etc — there's not enough room on the slide for them all but pretend they are there).
 
 The "id" column is automatically added to every table, and the db assigns a unique value for each record. We don't get to pick the name of the column or assign values.
 
 ![](assets/movies-table-2.png)
-{: .bleed-full }
 
 Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm-associations.matchthetarget.com/directors/2662) — where should we store that information?
 
 We could continue storing more and more director attributes (like bio or dob) within movies, but we will start to get a lot of redundancy But, it works and doesn't violate either of our two db design constraints.
 
 ![](assets/movies-table-3.png)
-{: .bleed-full }
 
 Now imagine that we start adding columns to keep track of the actors who star in a movie. We run into a problem: we've violated Constraint Two — we can't store more than one value in a single cell.
 
 ![](assets/movies-table-4.png)
-{: .bleed-full }
 
 One reason for not adding multiple values in a single cell — when the values are long there will be a lot of redundancy. More importantly, filtering rows by a criteria is a lot easier when you don't have to look through a list.
 
@@ -187,14 +183,11 @@ Wherever we observed redundancy, or if we were tempted to store more than 1 valu
 As we build it out we will find that we need some **one-to-many relationships** between tables. This will make use of _primary keys_ and _foreign keys_ to associate rows to one another.
 
 ![](assets/one-to-many-1.png)
-{: .bleed-full }
 
 And we will also find that we need some **many-to-many relationships** between tables. This will require us to put two primary keys in a new _join table_.
 
 ![](assets/many-to-many-1.png)
-{: .bleed-full }
 
 And we may will also find that there are real names to describe the relationships in such many-to-many join tables!
 
 ![](assets/many-to-many-2.png)
-{: .bleed-full }
