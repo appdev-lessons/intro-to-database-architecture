@@ -108,8 +108,93 @@ We have to be able to describe the routine we would go through to do these looku
 
 ## One strategy for database architecture
 
-**We** (the developers) figure out the main _things_, or _nouns_, in our problem space while domain modeling. These things are candidates to be **tables**.
+- **We** (the developers) figure out the main _things_, or _nouns_, in our problem space while domain modeling. These things are candidates to be **tables**.
+- For each thing, we figure out which _attributes_ we need to keep track of. These attributes are candidates to be columns in that table.
+- We (the developers) create the tables and columns we identified.
 
-For each thing, we figure out which _attributes_ we need to keep track of. These attributes are candidates to be columns in that table.
+In a relational database, all user actions translate to creating, reading, updating, or deleting **rows** in the tables that the developers have created.
 
-We (the developers) create the tables and columns we identified.
+We say "create, read, update, or delete" so often — the fundamental 4 operations that all user actions map to — that, in the industry, we abbreviate it to **CRUD**.
+
+Note: Users cannot create tables, or add columns to tables. They can only CRUD **rows** in existing tables.
+
+## Database design constraints
+
+### Constraint one
+
+Users actions can CRUD rows within existing tables, but **cannot add new tables or columns**. 
+
+We, the developers, will create all tables and columns up front, when we design and deploy the application.
+
+User actions can CRUD a million **rows** per second. But they can't add _any_ tables or columns.
+
+## Constraint two
+
+**We can only store one value per cell.**
+
+It's tempting sometimes to want to store multiple values within one cell, perhaps separated by commas or slashes — but it makes filtering hard.
+
+The value in one cell can be a very long piece of text, like a bio; but it can't be _multiple_ bios for different people.
+
+## Must See Movies
+
+Okay, this is all pretty abstract. Let's look at some examples.
+
+Lets examine [this application](https://msm-associations.matchthetarget.com/), which is one that we'll build in class. It's a very simplified version of the iMDB Top 250 movies list (this is where we scraped the data from).
+
+Click around it for a minute and then try to imagine — what are the tables and columns powering this application? How many tables are required? What columns are in each table? I'll show you a solution in a moment, but take a guess.
+
+Remember:
+
+- **We** (the developers) figure out the main _things_, or _nouns_, in our problem space while domain modeling. These things are candidates to be **tables**.
+- For each thing, we figure out which _attributes_ we need to keep track of. These attributes are candidates to be columns in that table.
+- We (the developers) create the tables and columns we identified.
+
+### One big table: Movies
+
+"Movie" seems like an important noun in this app's problem domain. Let's make a table to keep track of movies. To guide us in identifying the attributes that are being stored, let's look at [a movie's details page](https://msm-associations.matchthetarget.com/movies/24).
+
+![](assets/movies-table-1.png)
+{: .bleed-full }
+
+We add columns for all of the attributes of a movie (title, duration, description, etc — there's not enough room on the slide for them all but pretend they are there).
+
+The "id" column is automatically added to every table, and the db assigns a unique value for each record. We don't get to pick the name of the column or assign values.
+
+![](assets/movies-table-2.png)
+{: .bleed-full }
+
+Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm-associations.matchthetarget.com/directors/2662) — where should we store that information?
+
+We could continue storing more and more director attributes (like bio or dob) within movies, but we will start to get a lot of redundancy But, it works and doesn't violate either of our two db design constraints.
+
+![](assets/movies-table-3.png)
+{: .bleed-full }
+
+Now imagine that we start adding columns to keep track of the actors who star in a movie. We run into a problem: we've violated Constraint Two — we can't store more than one value in a single cell.
+
+![](assets/movies-table-4.png)
+{: .bleed-full }
+
+One reason for not adding multiple values in a single cell — when the values are long there will be a lot of redundancy. More importantly, filtering rows by a criteria is a lot easier when you don't have to look through a list.
+
+### More than one table
+
+So: if we only have one table, we'll have to break Constraint Two. Let's try multiple tables instead. What are other important nouns in the problem domain that might deserve their own table?
+
+Wherever we observed redundancy, or if we were tempted to store more than 1 value in a cell, that's a candidate for an entity that requires its own table.
+
+As we build it out we will find that we need some **one-to-many relationships** between tables. This will make use of _primary keys_ and _foreign keys_ to associate rows to one another.
+
+![](assets/one-to-many-1.png)
+{: .bleed-full }
+
+And we will also find that we need some **many-to-many relationships** between tables. This will require us to put two primary keys in a new _join table_.
+
+![](assets/many-to-many-1.png)
+{: .bleed-full }
+
+And we may will also find that there are real names to describe the relationships in such many-to-many join tables!
+
+![](assets/many-to-many-2.png)
+{: .bleed-full }
