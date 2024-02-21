@@ -16,7 +16,7 @@ I want to extend the analogy a bit more...
 
 Back in the early times, what were people writing? On this tablet, is the _very first_ name in recorded history (the author's signature):
 
-![](assets/printing-press.png)
+![](assets/first-tablet.png)
 
 Do you know what is written here? Try to guess, then click for the answer:
 
@@ -26,14 +26,7 @@ Do you know what is written here? Try to guess, then click for the answer:
 
 <div class="modal fade" id="firstWrittenName" tabindex="-1" aria-labelledby="firstWrittenNameLabel" aria-hidden="true">
   <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-body">
-        "29,086 measures barley; 37 months — Kushim"
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-      </div>
-    </div>
+    "29,086 measures barley; 37 months — Kushim"
   </div>
 </div>
 
