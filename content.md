@@ -191,3 +191,9 @@ And we will also find that we need some **many-to-many relationships** between t
 And we may will also find that there are real names to describe the relationships in such many-to-many join tables!
 
 ![](assets/many-to-many-2.png)
+
+### Must See Movies Solution
+
+The full database architecture solution to Must See Movies can be found below. Try not to peek at the solution until you've tried to write it out yourself by hand or in a spreadsheet software.
+
+![](assets/Must%20See%20Movies%20database%20architecture%20solution.pdf)
