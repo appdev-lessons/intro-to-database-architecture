@@ -128,7 +128,7 @@ We, the developers, will create all tables and columns up front, when we design 
 
 User actions can CRUD a million **rows** per second. But they can't add _any_ tables or columns.
 
-## Constraint two
+### Constraint two
 
 **We can only store one value per cell.**
 
