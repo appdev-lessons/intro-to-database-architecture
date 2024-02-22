@@ -180,9 +180,13 @@ So: if we only have one table, we'll have to break Constraint Two. Let's try mul
 
 Wherever we observed redundancy, or if we were tempted to store more than 1 value in a cell, that's a candidate for an entity that requires its own table.
 
+#### One-to-many associations
+
 As we build it out we will find that we need some **one-to-many relationships** between tables. This will make use of _primary keys_ and _foreign keys_ to associate rows to one another.
 
 ![](assets/one-to-many-1.png)
+
+#### Many-to-many associations
 
 And we will also find that we need some **many-to-many relationships** between tables. This will require us to put two primary keys in a new _join table_.
 
