@@ -37,7 +37,7 @@ Do you know what is written here? Try to guess before you click.
 
 ---
 
-<div style="height: 250px;"></div>
+<div style="height: 150px;"></div>
 
 ### What were they printing?
 
@@ -61,7 +61,7 @@ Almanacs, which are annual publications that include information such as weather
 
 ---
 
-<div style="height: 250px;"></div>
+<div style="height: 150px;"></div>
 
 ### My Claim
 
