@@ -44,23 +44,24 @@ Do you know what is written here? Try to guess before you click.
 > "It is telling that the first recorded name in history belongs to an accountant, rather than a prophet, a poet, or a great conqueror."
 > — Yuval Noah Harari, Sapiens: A Brief History of Humankind
 
-After the bible, what was the best-selling book in the 17th century? Try to guess before you click.
+After the bible, what was the best-selling book in the 17th century? 
+
+- Try to guess before you click!
+{: .free_text #early_best_sellers title="Early best-sellers" points="1" answer="any" }
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#earlyBestSeller">
   Click for answer
 </button>
 
 <div class="modal fade" id="earlyBestSeller" tabindex="-1" aria-labelledby="earlyBestSellerLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    Almanacs!
+  <div class="modal-dialog text-bg-light p-3 rounded">
+Almanacs, which are annual publications that include information such as weather forecasts, farmers' planting dates, tide tables, and tabular information often arranged according to the calendar.
   </div>
 </div>
 
 ---
 
 <div style="height: 250px;"></div>
-
-An almanac is an annual publication that includes information such as weather forecasts, farmers' planting dates, tide tables, and tabular information often arranged according to the calendar.
 
 ### My Claim
 
