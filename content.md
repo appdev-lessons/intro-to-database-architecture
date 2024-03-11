@@ -140,6 +140,21 @@ It's tempting sometimes to want to store multiple values within one cell, perhap
 
 The value in one cell can be a very long piece of text, like a bio; but it can't be _multiple_ bios for different people.
 
+- Choose all that are true:
+- A relational database is a prerequisite for most CRUD apps.
+  - Yes!
+- We can think of a database much like a set of tables in a spreadsheet software.
+  - Yes! This is a helpful way to think about it.
+- The "things" or "nouns" in our problem space are candidates for tables; and their attributes are candidates for columns.
+  - Yes!
+- CRUD stands for **C**reate, **R**ead, **U**pdate, and **D**elete
+  - Yes!
+- Users are allowed to add columns in our database.
+  - Not quite. Re-read the constraints.
+- We can store more than one value per cell in our database tables. 
+  - Not quite. Re-read the constraints.
+{: .choose_all #database_quiz title="Database quiz" points="4" answer="[1,2,3,4]" }
+
 ## Must See Movies
 
 Okay, this is all pretty abstract. Let's look at some examples.
