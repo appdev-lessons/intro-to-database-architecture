@@ -33,9 +33,9 @@ Do you know what is written here? Try to guess before you click.
 </div>
 
 - Who was "Kushim"? What do you think their job was? Give it a guess!
-- any
+- Scribe
   - Kushim was a "scribe", i.e. a _record keeper_.
-{: .free_text #first_job title="The first recorded job" points="1" answer="1" }
+{: .free_text #first_job title="The first recorded job" points="1" }
 
 ---
 
