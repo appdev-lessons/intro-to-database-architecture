@@ -27,10 +27,17 @@ Do you know what is written here? Try to guess before you click.
 </button>
 
 <div class="modal fade" id="firstWrittenName" tabindex="-1" aria-labelledby="firstWrittenNameLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    "29,086 measures barley; 37 months — Kushim"
+  <div class="modal-dialog py-4">
+"29,086 measures barley; 37 months — Kushim"
   </div>
 </div>
+
+- Who was "Kushim"? What do you think their job was? Give it a guess!
+- Scribe
+  - That's right!
+- any
+  - Kushim was actually a "scribe", i.e. a _record keeper_.
+{: .free_text #first_job title="The first recorded job" points="1" answer="any" }
 
 ---
 
