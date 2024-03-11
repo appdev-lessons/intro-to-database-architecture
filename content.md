@@ -27,7 +27,7 @@ Do you know what is written here? Try to guess before you click.
 </button>
 
 <div class="modal fade" id="firstWrittenName" tabindex="-1" aria-labelledby="firstWrittenNameLabel" aria-hidden="true">
-  <div class="modal-dialog py-4">
+  <div class="modal-dialog text-bg-light p-3">
 "29,086 measures barley; 37 months — Kushim"
   </div>
 </div>
