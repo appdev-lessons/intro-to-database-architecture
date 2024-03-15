@@ -223,3 +223,7 @@ The full database architecture solution to [Must See Movies](https://msm-associa
 
 [**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1708589795/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
 </div>
+
+- Approximately how long (in minutes) did this lesson take you to complete?
+{: .free_text_number #time_taken title="Time taken" points="1" answer="any" }
+
