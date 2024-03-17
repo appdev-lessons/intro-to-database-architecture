@@ -1,4 +1,4 @@
-# Intro to Database Architecture
+# Intro to Database Architecture: Must See Movies
 
 ## The first writers
 
