@@ -1,104 +1,10 @@
 # Intro to Database Architecture: Must See Movies
 
-## The first writers
+## Slides
 
-In 2012, I gave [a talk at TEDxUChicago](https://www.youtube.com/watch?v=rtl9QG4qe6g), in which I discussed the following idea:
+Here are [the slides I will be going through today](https://firstdraft.slides.com/d/236NZyU/live).
 
-When the printing press was invented, the foundation of the world was the written word.
-
-![](assets/scribe-1.png)
-
-![](assets/printing-press.png)
-
-The foundation of the world _today_ is software.
-
-I want to extend the analogy a bit more...
-
-### What were they writing?
-
-Back in the early times, what were people writing? On this tablet, is the _very first_ name in recorded history (the author's signature):
-
-![](assets/first-tablet.png)
-
-Do you know what is written here? Try to guess before you click.
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#firstWrittenName">
-  Click for answer
-</button>
-
-<div class="modal fade" id="firstWrittenName" tabindex="-1" aria-labelledby="firstWrittenNameLabel" aria-hidden="true">
-  <div class="modal-dialog text-bg-light p-3 rounded">
-"29,086 measures barley; 37 months — Kushim"
-  </div>
-</div>
-
-- Who was "Kushim"? What do you think their job was? Give it a guess!
-{: .free_text #first_job title="The first recorded job" points="1" answer="any" }
-
----
-
-<div style="height: 150px;"></div>
-
-### What were they printing?
-
-> "It is telling that the first recorded name in history belongs to an accountant, rather than a prophet, a poet, or a great conqueror."
-> — Yuval Noah Harari, Sapiens: A Brief History of Humankind
-
-After the bible, what was the best-selling book in the 17th century? 
-
-- Try to guess before you click!
-{: .free_text #early_best_sellers title="Early best-sellers" points="1" answer="any" }
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#earlyBestSeller">
-  Click for answer
-</button>
-
-<div class="modal fade" id="earlyBestSeller" tabindex="-1" aria-labelledby="earlyBestSellerLabel" aria-hidden="true">
-  <div class="modal-dialog text-bg-light p-3 rounded">
-Almanacs, which are annual publications that include information such as weather forecasts, farmers' planting dates, tide tables, and tabular information often arranged according to the calendar.
-  </div>
-</div>
-
----
-
-<div style="height: 150px;"></div>
-
-### My Claim
-
-The killer application of writing, and printing, was _recordkeeping_.
-
-The killer application of computing _is also_ recordkeeping.
-
-The heart of the ultra-valuable cloud-based apps that have "eaten the world" is the information they are keeping track of. Users, tweets, and who-follows-who in Twitter. Listings, bookings, and messages in Airbnb. Venues, reviews, and ratings in Yelp. Etc.
-
-We keep track of this information as records in plain old tables — just like they did in almanacs in the 17th century. One of the most important parts of developing an app to solve a problem is figuring out _what information it needs to keep track of_. And then, designing a set of tables to organize that information effectively. This is part of the process known as _database architecture_.
-
-Database architecture is part of a larger process known as _domain modeling_, wherein a developer becomes a mini-domain-expert in the area they're building software for.
-
-Domain modeling involves conducting interviews, reading reference manuals and textbooks, discovering existing processes, gathering sample data, making mockups, and other research.
-
-Only after you've done this research can you begin to implement a solution. We'll focus on the database architecture part of domain modeling, for now.
-
-## Request/Response Cycle
-
-![](assets/request-response-cycle.png)
-{: .bleed-full }
-
-It is, of course, important to provide a usable interface; but the interface by itself is not useful without the information.
-
-<aside>
-For most cloud-based software. If you're writing a non-cloud based game, then the interface itself may indeed be the valuable part.
-</aside>
-
-The core value of cloud-based apps is the ever-changing information it keeps track of.
-
-airbedandbreakfast.com, circa 2009:
-
-![old airbnb](assets/old-airbnb.png)
-
-We've only scratched the surface of HTML and CSS, but it's enough for our purposes for now.
-
-Today we're going to start learning how to store and retrieve users' information — ultimately, the value of most cloud-based apps.
+Below are written notes which you should also review.
 
 ## Databases
 
@@ -106,27 +12,27 @@ A "database" is a piece of software that stores and retrieves information. We'll
 
 Relational databases are the workhorses of computing. There are other kinds of databases for specialized purposes (graph databases, vector databases, etc); but relational databases drive the main functionality of most cloud-based software.
 
-Don't let the fancy name throw you — relational databases are a set of tables — like an almanac. Each table has headings and entries, or columns and rows; and we perform lookups to find information that we want. I don't want you to think about databases as software at all. Try to think of them as just paper, like almanacs or clipboards.
+Don't let the fancy name throw you — relational databases are nothing more than a set of tables, like you'd find in an almanac. Each table has headings and entries, or columns and rows; and we perform lookups to find information that we're interested in. I don't want you to think about databases as software at all. Try to think of them as just paper, like almanacs or clipboards.
 
-We have to be able to describe the routine we would go through to do these lookups manually, as humans, if we had the tables printed out on paper. Computers are faster at doing them than us, but computers can only do the same, simple operations that we can — filtering based on criteria, sorting, counting, and cross-referencing rows in tables.
+In order to write our apps, we first have to be able to describe the manual routine we would go through to do these lookups, as humans, if we had the tables printed out on paper. Computers are faster at doing them than us, but computers can only do the same, simple operations that we can — filtering based on criteria, sorting, counting, and cross-referencing rows in tables.
 
 ## One strategy for database architecture
 
-- **We** (the developers) figure out the main _things_, or _nouns_, in our problem space while domain modeling. These things are candidates to be **tables**.
+There are many approaches that database designers use to come up with a database design (or "schema") for a given problem space. Here is a common one:
+
+- We figure out the main _things_, or _nouns_, in our problem space. These things are candidates to be **tables**.
 - For each thing, we figure out which _attributes_ we need to keep track of. These attributes are candidates to be columns in that table.
-- We (the developers) create the tables and columns we identified.
+- We draw out the tables and columns we identified. Then we simulate user actions and make sure that our design can support them all.
 
 In a relational database, all user actions translate to creating, reading, updating, or deleting **rows** in the tables that the developers have created.
 
 We say "create, read, update, or delete" so often — the fundamental 4 operations that all user actions map to — that, in the industry, we abbreviate it to **CRUD**.
 
-Note: Users cannot create tables, or add columns to tables. They can only CRUD **rows** in existing tables.
-
 ## Database design constraints
 
 ### Constraint one
 
-Users actions can CRUD rows within existing tables, but **cannot add new tables or columns**. 
+Users actions can trigger CRUDing **rows** within existing tables, but **cannot trigger adding new tables or columns**. 
 
 We, the developers, will create all tables and columns up front, when we design and deploy the application.
 
@@ -165,9 +71,9 @@ Click around it for a minute and then try to imagine — what are the tables and
 
 Remember:
 
-- **We** (the developers) figure out the main _things_, or _nouns_, in our problem space while domain modeling. These things are candidates to be **tables**.
+- We figure out the main _things_, or _nouns_, in our problem space. These things are candidates to be **tables**.
 - For each thing, we figure out which _attributes_ we need to keep track of. These attributes are candidates to be columns in that table.
-- We (the developers) create the tables and columns we identified.
+- We draw out the tables and columns we identified. Then we simulate user actions and make sure that our design can support them all.
 
 ### One big table: Movies
 
@@ -224,6 +130,11 @@ The full database architecture solution to [Must See Movies](https://msm-associa
 [**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1711038623/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
 </div>
 
+---
+
+[Here is a link to the non-live version of the slides.](https://firstdraft.slides.com/raghubetina/appdev-03-intro-to-database-architecture?token=9RBQRn_H)
+
+---
+
 - Approximately how long (in minutes) did this lesson take you to complete?
 {: .free_text_number #time_taken title="Time taken" points="1" answer="any" }
-
