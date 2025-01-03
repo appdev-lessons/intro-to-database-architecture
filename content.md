@@ -123,9 +123,9 @@ And we may will also find that there are real names to describe the relationship
 
 ![](assets/many-to-many-2.png)
 
-<div class="alert alert-primary">
+<div class="alert alert-info">
 
-### Must See Movies Solution
+**Must See Movies Solution**
 
 The full database architecture solution to [Must See Movies](https://msm.matchthetarget.com/) can be found below. Try not to peek at the solution until you've tried to write it out yourself by hand or in a spreadsheet software.
 
