@@ -67,7 +67,7 @@ The value in one cell can be a very long piece of text, like a bio; but it can't
 
 Okay, this is all pretty abstract. Let's look at some examples.
 
-Lets examine [this application](https://msm-associations.matchthetarget.com/), which is one that we'll build in class. It's a very simplified version of the iMDB Top 250 movies list (this is where we scraped the data from).
+Lets examine [this application](https://msm.matchthetarget.com/), which is one that we'll build in class. It's a very simplified version of the iMDB Top 250 movies list (this is where we scraped the data from).
 
 Click around it for a minute and then try to imagine — what are the tables and columns powering this application? How many tables are required? What columns are in each table? I'll show you a solution in a moment, but take a guess.
 
@@ -79,7 +79,7 @@ Remember:
 
 ### One big table: Movies
 
-"Movie" seems like an important noun in this app's problem domain. Let's make a table to keep track of movies. To guide us in identifying the attributes that are being stored, let's look at [a movie's details page](https://msm-associations.matchthetarget.com/movies/24).
+"Movie" seems like an important noun in this app's problem domain. Let's make a table to keep track of movies. To guide us in identifying the attributes that are being stored, let's look at [a movie's details page](https://msm.matchthetarget.com/movies/24).
 
 ![](assets/movies-table-1.png)
 
@@ -89,7 +89,7 @@ The "id" column is automatically added to every table, and the db assigns a uniq
 
 ![](assets/movies-table-2.png)
 
-Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm-associations.matchthetarget.com/directors/2662) — where should we store that information?
+Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm.matchthetarget.com/directors/2662) — where should we store that information?
 
 We could continue storing more and more director attributes (like bio or dob) within movies, but we will start to get a lot of redundancy But, it works and doesn't violate either of our two db design constraints.
 
@@ -127,7 +127,7 @@ And we may will also find that there are real names to describe the relationship
 
 ### Must See Movies Solution
 
-The full database architecture solution to [Must See Movies](https://msm-associations.matchthetarget.com/) can be found below. Try not to peek at the solution until you've tried to write it out yourself by hand or in a spreadsheet software.
+The full database architecture solution to [Must See Movies](https://msm.matchthetarget.com/) can be found below. Try not to peek at the solution until you've tried to write it out yourself by hand or in a spreadsheet software.
 
 [**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1711038623/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
 </div>
