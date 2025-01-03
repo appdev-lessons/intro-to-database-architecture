@@ -4,6 +4,8 @@
 
 Here are [the slides I will be going through today](https://firstdraft.slides.com/d/236NZyU/live).
 
+[Here is a link to the non-live version of the slides for you to look through.](https://firstdraft.slides.com/raghubetina/appdev-03-intro-to-database-architecture?token=9RBQRn_H)
+
 Below are written notes which you should also review.
 
 ## Databases
