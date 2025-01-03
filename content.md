@@ -132,11 +132,5 @@ The full database architecture solution to [Must See Movies](https://msm.matchth
 [**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1711038623/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
 </div>
 
----
-
-[Here is a link to the non-live version of the slides.](https://firstdraft.slides.com/raghubetina/appdev-03-intro-to-database-architecture?token=9RBQRn_H)
-
----
-
 - Approximately how long (in minutes) did this lesson take you to complete?
 {: .free_text_number #time_taken title="Time taken" points="1" answer="any" }
