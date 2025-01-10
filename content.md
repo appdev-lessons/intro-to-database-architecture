@@ -129,7 +129,7 @@ And we may will also find that there are real names to describe the relationship
 
 The full database architecture solution to [Must See Movies](https://msm.matchthetarget.com/) can be found below. Try not to peek at the solution until you've tried to write it out yourself by hand or in a spreadsheet software.
 
-[**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1736373209/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
+[**Solution PDF file**](https://res.cloudinary.com/dmxgp9oq2/image/upload/v1736541827/appdev-lessons/intro-to-database-architecture/main/Must%20See%20Movies%20database%20architecture%20solution.pdf)
 </div>
 
 - Approximately how long (in minutes) did this lesson take you to complete?
