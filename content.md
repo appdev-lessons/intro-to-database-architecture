@@ -89,7 +89,7 @@ The "id" column is automatically added to every table, and the db assigns a uniq
 
 ![](assets/movies-table-2.png)
 
-Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm.matchthetarget.com/directors/2662) — where should we store that information?
+Now imagine that we start adding columns for the director info that we see on the movie details page, like the director's name. But there is also more information about each director [on their own details page](https://msm.matchthetarget.com/directors/45400) — where should we store that information?
 
 We could continue storing more and more director attributes (like bio or dob) within movies, but we will start to get a lot of redundancy But, it works and doesn't violate either of our two db design constraints.
 
